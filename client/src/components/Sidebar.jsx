@@ -1,37 +1,32 @@
-import { Link } from "react-router-dom";
+function Sidebar(){
 
-function Sidebar() {
-  return (
-    <div className="h-screen w-60 bg-gray-800 text-white p-5">
+  return(
 
-      <h2 className="text-xl font-bold mb-6">
+    <div className="w-64 h-screen bg-gray-900 text-white p-6">
+
+      <h2 className="text-2xl font-bold mb-8">
         Menu
       </h2>
 
-      <ul className="space-y-4">
+      <ul className="space-y-5">
 
-        <li>
-          <Link to="/student/dashboard" className="hover:text-gray-300">
-            Dashboard
-          </Link>
+        <li className="hover:text-gray-300 cursor-pointer">
+          Dashboard
         </li>
 
-        <li>
-          <Link to="/student/attendance" className="hover:text-gray-300">
-            Mark Attendance
-          </Link>
+        <li className="hover:text-gray-300 cursor-pointer">
+          Mark Attendance
         </li>
 
-        <li>
-          <Link to="/student/history" className="hover:text-gray-300">
-            Attendance History
-          </Link>
+        <li className="hover:text-gray-300 cursor-pointer">
+          Attendance History
         </li>
 
       </ul>
 
     </div>
-  );
+
+  )
 }
 
-export default Sidebar;
+export default Sidebar

@@ -1,31 +1,32 @@
-import { Link } from "react-router-dom";
+function Navbar(){
 
-function Navbar() {
-  return (
-    <div className="w-full bg-blue-600 text-white p-4 flex justify-between items-center">
+  return(
+
+    <nav className="bg-blue-600 text-white px-8 py-4 flex justify-between items-center">
 
       <h1 className="text-xl font-bold">
-        Smart Attendance System
+        Smart Attendance
       </h1>
 
       <div className="flex gap-6">
 
-        <Link to="/student/dashboard" className="hover:underline">
+        <button className="hover:text-gray-200">
           Dashboard
-        </Link>
+        </button>
 
-        <Link to="/student/history" className="hover:underline">
-          Attendance History
-        </Link>
+        <button className="hover:text-gray-200">
+          History
+        </button>
 
-        <button className="bg-red-500 px-3 py-1 rounded">
+        <button className="bg-red-500 px-4 py-1 rounded-lg hover:bg-red-600">
           Logout
         </button>
 
       </div>
 
-    </div>
-  );
+    </nav>
+
+  )
 }
 
-export default Navbar;
+export default Navbar

@@ -2,6 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
+/* Global Font */
+body {
   font-family: 'Poppins', sans-serif;
+}
+
+/* Custom Utility Classes */
+
+.container-center {
+  @apply flex items-center justify-center min-h-screen bg-gray-100;
+}
+
+.card {
+  @apply bg-white p-8 rounded-xl shadow-lg;
+}
+
+.input-field {
+  @apply w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400;
+}
+
+.primary-btn {
+  @apply w-full bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700 transition;
+}
+
+.secondary-btn {
+  @apply bg-green-500 text-white px-6 py-3 rounded-lg hover:bg-green-600 transition;
 }
