@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Login() {
 
@@ -9,30 +10,41 @@ function Login() {
 
     <div className="container-center">
 
-      <div className="card w-96">
+      <div className="card w-full max-w-md">
+        <div className="card-pad">
 
-        <h2 className="text-3xl font-bold text-center mb-6">
-          Smart Attendance Login
-        </h2>
+          <h2 className="text-2xl sm:text-3xl font-semibold tracking-tight text-center mb-2">
+            Smart Attendance
+          </h2>
+          <p className="muted text-center mb-7">Sign in to continue.</p>
 
-        <input
-          type="email"
-          placeholder="Email"
-          className="input-field mb-4"
-          onChange={(e)=>setEmail(e.target.value)}
-        />
+          <div className="space-y-4">
+            <input
+              type="email"
+              placeholder="Email"
+              className="input-field"
+              onChange={(e)=>setEmail(e.target.value)}
+            />
 
-        <input
-          type="password"
-          placeholder="Password"
-          className="input-field mb-6"
-          onChange={(e)=>setPassword(e.target.value)}
-        />
+            <input
+              type="password"
+              placeholder="Password"
+              className="input-field"
+              onChange={(e)=>setPassword(e.target.value)}
+            />
+          </div>
 
-        <button className="primary-btn">
-          Login
-        </button>
+          <button className="primary-btn mt-6" type="button">
+            Login
+          </button>
 
+          <div className="mt-5 text-center text-sm">
+            <span className="muted">No account? </span>
+            <Link className="font-medium text-blue-700 hover:text-blue-800" to="/register">
+              Create one
+            </Link>
+          </div>
+        </div>
       </div>
 
     </div>

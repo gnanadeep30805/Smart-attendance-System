@@ -1,32 +1,60 @@
-function Sidebar(){
+import { Link, useLocation } from "react-router-dom";
 
-  return(
+function Sidebar() {
+  const { pathname } = useLocation();
 
-    <div className="w-64 h-screen bg-gray-900 text-white p-6">
+  const isStudent = pathname.startsWith("/student");
+  const isTeacher = pathname.startsWith("/teacher");
 
-      <h2 className="text-2xl font-bold mb-8">
-        Menu
-      </h2>
+  const items = isTeacher
+    ? [
+        { to: "/teacher/dashboard", label: "Dashboard" },
+        { to: "/teacher/sections", label: "Sections" },
+        { to: "/teacher/students", label: "Students" },
+        { to: "/teacher/report", label: "Report" },
+      ]
+    : isStudent
+    ? [
+        { to: "/student/dashboard", label: "Dashboard" },
+        { to: "/student/mark-attendance", label: "Mark Attendance" },
+        { to: "/student/history", label: "Attendance History" },
+      ]
+    : [];
 
-      <ul className="space-y-5">
+  if (!items.length) return null;
 
-        <li className="hover:text-gray-300 cursor-pointer">
-          Dashboard
-        </li>
+  return (
+    <aside className="w-64 bg-gray-900 text-white min-h-screen">
+      <div className="p-5">
 
-        <li className="hover:text-gray-300 cursor-pointer">
-          Mark Attendance
-        </li>
+        {/* Title */}
+        <h2 className="text-lg font-semibold mb-6">Menu</h2>
 
-        <li className="hover:text-gray-300 cursor-pointer">
-          Attendance History
-        </li>
+        {/* Menu Links */}
+        <div className="space-y-2">
+          {items.map((item) => {
+            const active = pathname === item.to;
 
-      </ul>
+            return (
+              <Link
+                key={item.to}
+                to={item.to}
+                className={`block px-4 py-2 rounded transition 
+                ${
+                  active
+                    ? "bg-blue-600 text-white"
+                    : "text-gray-300 hover:bg-gray-700 hover:text-white"
+                }`}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
+        </div>
 
-    </div>
-
-  )
+      </div>
+    </aside>
+  );
 }
 
-export default Sidebar
+export default Sidebar;

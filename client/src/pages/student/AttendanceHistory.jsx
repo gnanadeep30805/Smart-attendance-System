@@ -1,15 +1,22 @@
+import Navbar from "../../components/navbar";
+import Sidebar from "../../components/Sidebar";
+
 function AttendanceHistory() {
   return (
-    <div className="p-10">
+    <div>
+      <Navbar />
+      <div className="app-grid">
+        <Sidebar />
 
-      <h2 className="text-2xl font-bold">
-        Attendance History
-      </h2>
-
-      <p className="mt-4">
-        Your attendance records will appear here.
-      </p>
-
+        <main className="page">
+          <div className="page-inner">
+            <div className="card card-pad">
+              <h2 className="page-title">Attendance History</h2>
+              <p className="muted mt-2">Your attendance records will appear here.</p>
+            </div>
+          </div>
+        </main>
+      </div>
     </div>
   );
 }

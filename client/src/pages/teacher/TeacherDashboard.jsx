@@ -1,4 +1,5 @@
 import Navbar from "../../components/navbar";
+import Sidebar from "../../components/Sidebar";
 
 function TeacherDashboard() {
   return (
@@ -6,16 +7,17 @@ function TeacherDashboard() {
 
       <Navbar />
 
-      <div className="p-10">
+      <div className="app-grid">
+        <Sidebar />
 
-        <h1 className="text-3xl font-bold">
-          Teacher Dashboard
-        </h1>
-
-        <p className="mt-4">
-          Manage attendance for your sections.
-        </p>
-
+        <main className="page">
+          <div className="page-inner">
+            <div className="card card-pad">
+              <h1 className="page-title">Teacher Dashboard</h1>
+              <p className="muted mt-2">Manage attendance for your sections.</p>
+            </div>
+          </div>
+        </main>
       </div>
 
     </div>

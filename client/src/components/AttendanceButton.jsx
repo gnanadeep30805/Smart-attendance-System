@@ -2,7 +2,8 @@ function AttendanceButton({ onClick }) {
   return (
     <button
       onClick={onClick}
-      className="bg-green-500 text-white px-6 py-3 rounded hover:bg-green-600"
+      className="secondary-btn"
+      type="button"
     >
       Mark Attendance
     </button>

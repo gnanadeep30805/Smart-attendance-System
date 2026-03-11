@@ -1,35 +1,38 @@
 import Navbar from "../../components/navbar";
 import Sidebar from "../../components/Sidebar";
 
-function StudentDashboard(){
+function StudentDashboard() {
+  return (
+    <div className="min-h-screen bg-gray-100">
 
-  return(
+      {/* Top Navbar */}
+      <Navbar />
 
-    <div>
-
-      <Navbar/>
-
+      {/* Layout */}
       <div className="flex">
 
-        <Sidebar/>
+        {/* Sidebar */}
+        <Sidebar />
 
-        <div className="flex-1 p-10 bg-gray-100 min-h-screen">
+        {/* Main Content */}
+        <main className="flex-1 p-6">
+          
+          {/* Welcome Card */}
+          <div className="bg-white shadow rounded-lg p-6">
+            <h1 className="text-2xl font-bold mb-2">
+              Student Dashboard
+            </h1>
 
-          <h1 className="text-3xl font-bold mb-4">
-            Student Dashboard
-          </h1>
+            <p className="text-gray-600">
+              Welcome to the Smart Attendance System.
+            </p>
+          </div>
 
-          <p className="text-gray-600">
-            Welcome to the Smart Attendance System
-          </p>
-
-        </div>
+        </main>
 
       </div>
-
     </div>
-
-  )
+  );
 }
 
-export default StudentDashboard
+export default StudentDashboard;

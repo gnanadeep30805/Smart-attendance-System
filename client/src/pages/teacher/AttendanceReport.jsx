@@ -1,15 +1,22 @@
+import Navbar from "../../components/navbar";
+import Sidebar from "../../components/Sidebar";
+
 function AttendanceReport() {
   return (
-    <div className="p-10">
+    <div>
+      <Navbar />
+      <div className="app-grid">
+        <Sidebar />
 
-      <h2 className="text-2xl font-bold">
-        Attendance Report
-      </h2>
-
-      <p className="mt-4">
-        Teachers can download attendance reports here.
-      </p>
-
+        <main className="page">
+          <div className="page-inner">
+            <div className="card card-pad">
+              <h2 className="page-title">Attendance Report</h2>
+              <p className="muted mt-2">Teachers can download attendance reports here.</p>
+            </div>
+          </div>
+        </main>
+      </div>
     </div>
   );
 }

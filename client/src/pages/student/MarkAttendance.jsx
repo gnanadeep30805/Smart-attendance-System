@@ -1,10 +1,12 @@
+import Navbar from "../../components/navbar";
+import Sidebar from "../../components/Sidebar";
+
 function MarkAttendance() {
 
   const markAttendance = () => {
     navigator.geolocation.getCurrentPosition((position) => {
 
-      const latitude = position.coords.latitude;
-      const longitude = position.coords.longitude;
+      const { latitude, longitude } = position.coords;
 
       console.log(latitude, longitude);
 
@@ -12,19 +14,29 @@ function MarkAttendance() {
   };
 
   return (
-    <div className="p-10">
+    <div>
+      <Navbar />
+      <div className="app-grid">
+        <Sidebar />
 
-      <h2 className="text-2xl font-bold">
-        Mark Attendance
-      </h2>
+        <main className="page">
+          <div className="page-inner">
+            <div className="card card-pad">
+              <h2 className="page-title">Mark Attendance</h2>
+              <p className="muted mt-2">
+                When you’re in class, click below to capture your current location and mark your
+                attendance.
+              </p>
 
-      <button
-        onClick={markAttendance}
-        className="mt-6 bg-green-500 text-white px-6 py-2 rounded"
-      >
-        Mark Attendance
-      </button>
-
+              <div className="mt-6">
+                <button onClick={markAttendance} className="secondary-btn" type="button">
+                  Mark Attendance
+                </button>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
     </div>
   );
 }
